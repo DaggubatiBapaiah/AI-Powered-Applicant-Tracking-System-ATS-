@@ -64,6 +64,7 @@ frontend/
 
 ---
 
+
 ## ⚙️ Setup Instructions
 
 ### 1️⃣ Clone the repository
@@ -87,6 +88,10 @@ Open frontend/index.html in your browser
 (or serve it via any static server)
 
 🧪 Demo Flow
+
+https://github.com/user-attachments/assets/d5f4f2b1-790d-4a6d-b38b-41c8cf6485f7
+
+
 
 Login as Recruiter → Post a job
 
