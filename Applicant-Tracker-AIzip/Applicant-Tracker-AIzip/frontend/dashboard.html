@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI ATS - Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <nav>
+        <span id="user-info"></span>
+        <button onclick="handleLogout()" class="small">Logout</button>
+    </nav>
+
+    <div id="candidate-view" class="dashboard-section" style="display: none;">
+        <h2>Candidate Dashboard</h2>
+
+        <section>
+            <h3>My Resume</h3>
+            <textarea id="resume-text" placeholder="Paste your resume here..."></textarea>
+            <button id="btn-update-resume" onclick="submitResume()">Update Resume</button>
+            <div id="resume-status"></div>
+        </section>
+
+        <section>
+            <h3>Available Jobs</h3>
+            <div id="jobs-list" class="grid"></div>
+        </section>
+
+        <section>
+            <h3>My Applications</h3>
+            <div id="candidate-apps" class="list"></div>
+        </section>
+    </div>
+
+    <div id="recruiter-view" class="dashboard-section" style="display: none;">
+        <h2>Recruiter Dashboard</h2>
+
+        <section>
+            <h3>Post New Job</h3>
+            <div class="form-group">
+                <input type="text" id="job-title" placeholder="Job Title">
+                <input type="text" id="job-skills" placeholder="Required Skills (e.g. Python, SQL)">
+                <textarea id="job-desc" placeholder="Job Description"></textarea>
+                <button id="btn-post-job" onclick="postJob()">Post Job</button>
+            </div>
+        </section>
+
+        <section>
+            <h3>My Jobs & Applicants</h3>
+            <div id="recruiter-jobs" class="list"></div>
+        </section>
+    </div>
+
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="/static/app.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('token')) {
+                window.location.href = '/';
+                return;
+            }
+            initDashboard();
+        });
+    </script>
+</body>
+
+</html>

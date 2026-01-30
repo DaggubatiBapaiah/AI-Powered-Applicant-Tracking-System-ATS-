@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI ATS - Login</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h1>AI ATS Platform</h1>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="********">
+        </div>
+        <div class="form-group">
+            <label>Role</label>
+            <select id="role">
+                <option value="candidate">Candidate</option>
+                <option value="recruiter">Recruiter</option>
+            </select>
+        </div>
+        <div class="button-group">
+            <button onclick="handleLogin()">Login</button>
+            <button onclick="handleSignup()" class="secondary">Signup</button>
+        </div>
+        <p id="message"></p>
+    </div>
+    <script src="/static/app.js" defer></script>
+</body>
+</html>
